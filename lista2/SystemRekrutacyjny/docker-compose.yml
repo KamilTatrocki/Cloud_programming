@@ -1,0 +1,12 @@
+services:
+  postgres-rekrutacja:
+    image: postgres:latest
+    container_name: postgres-rekrutacja
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: CandidateDB
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./init-db:/docker-entrypoint-initdb.d
